@@ -1,2 +1,22 @@
 server:
   port: 9090
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  datasource:
+    url: jdbc:h2:mem:howalog
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+#  data:
+#    web:
+#      pageable:
+        # 웹 요청을 통해서 전달된 파라미터를 내부적으로 -1 시켜주는 경우
+        # 서비스단을 테스트 시에는 값이 보정되지 않음.
+#        one-indexed-parameters: true
+logging:
+  level:
+    org.hibernate.SQL: debug
