@@ -45,13 +45,6 @@ public class ExceptionController {
                 .validation(e.getValidation())
                 .build();
 
-//        if (e instanceof InvalidRequest) {
-//            InvalidRequest invalidRequest = (InvalidRequest) e;
-//            String fieldName = invalidRequest.getFieldName();
-//            String message = invalidRequest.getMessage();
-//            body.addValidation(fieldName, message);
-//        }
-
         return ResponseEntity.status(e.getStatusCode())
                 .body(body);
     }
